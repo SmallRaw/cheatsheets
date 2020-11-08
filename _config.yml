@@ -31,6 +31,9 @@ exclude:
 
 # Markdown
 
+include:
+  -sheet
+
 highlighter: false
 markdown: kramdown
 kramdown:

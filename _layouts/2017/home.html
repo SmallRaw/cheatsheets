@@ -23,8 +23,10 @@
       {{ site.data.content.home.tagline }}
     </p>
 
+    <!-- 搜索框 -->
     {% include 2017/search-form.html live=true %}
 
+    <!-- 广告 -->
     {% if site.data.carbon.enabled %}
       <div class='pubbox'>
         {% include 2017/headline-pub.html %}
@@ -33,12 +35,13 @@
   </div>
 
   <div class='pages-list' role='main'>
+    <!-- 精选开发速查清单 -->
     {% for page in featured_pages %}
       {% include 2017/pages-list-item.html page=page class='item top-sheet' %}
     {% endfor %}
 
     <h2 class='category item' data-js-searchable-header>
-      <span>Recently updated</span>
+      <span>最近更新的开发速查表</span>
     </h2>
 
     {% for page in recent_pages reversed %}
