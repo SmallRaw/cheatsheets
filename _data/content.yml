@@ -1,5 +1,5 @@
 home:
-  title: "SmallRaw Cheatsheets"
+  title: "SmallRaw 开发速查表"
   tagline: |
     这是 SmallRaw 组织制作的一份开发速查表。
 
@@ -9,7 +9,7 @@ top_nav:
   edit_on_github: 去 GitHub 编辑
 
 sheet:
-  suffix: cheatsheet
+  suffix: 开发速查表
 
 social_list:
   default_description: "收集开发速查表"
@@ -24,7 +24,7 @@ related_posts_callout:
 related_posts_group:
   top: 顶置的开发速查表
   other: 其他开发速查表
-  category: 相关开发速查表
+  category: 相同类型的开发速查表
 
 search_form:
   default_placeholder: 搜索开发速查表
