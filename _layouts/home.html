@@ -5,13 +5,22 @@ type: home
 {% include head.html %}
 {% include site-header.html %}
 
-{% for category in site.data.categories.names %}
+{% capture categorie_list %}
+{% for categorie in site.pages %}
+  {{categorie.category | strip }}
+  {% if forloop.last == false %}::{% endif%}
+{% endfor %}
+{% endcapture %}
+{% assign categories = categorie_list | split: '::' | sort | uniq %}
+
+
+{% for category in categories %}
   <div class='pages-header'>
     <h2 id='{{ category | downcase | replace: " ", "-" }}'>{{ category }}</h2>
   </div>
   <div class='pages-list'>
     {% for page in site.pages %}
-      {% if page.category == category %}
+      {% if category contains page.category %}
         <a href="{{base}}{{ page.url }}">
           <span class='title'>{{ page.title }}</span>
           <span class='date'>{{ page.url | remove: '.html' | remove: '/' }}</span>

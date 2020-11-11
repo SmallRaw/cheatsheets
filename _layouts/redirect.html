@@ -2,10 +2,10 @@
 {% assign target = page.redirect.to | remove: '.html' | replace: 'cheatsheets/cheatsheets', 'cheatsheets' %}
 <html lang="en-US">
   <meta charset="utf-8">
-  <title>Redirecting…</title>
+  <title>链接调跳转中...</title>
   <link rel="canonical" href="{{ target }}">
   <meta http-equiv="refresh" content="0; url={{ target }}">
-  <h1>Redirecting...</h1>
-  <a href="{{ target }}">Click here if you are not redirected.</a>
+  <h1>链接调跳转中...</h1>
+  <a href="{{ target }}">如果你还没有跳转请点击这里。</a>
   <script>location="{{ target }}"</script>
 </html>

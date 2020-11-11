@@ -1,4 +1,5 @@
-{% assign slug = include.page.url | remove: '.html' | remove_first: '/' %}
+{% assign urls = include.page.url | split: '/' %}
+{% assign slug = urls.last | remove: '.html' %}
 <a class='{{ include.class }} -item-{{ slug }}'
   href="{{base}}{{ include.page.url | remove: '.html' }}"
   data-js-searchable-item='{"slug":"{{ slug }}","category":"{{ include.page.category }}"}'>
@@ -6,7 +7,7 @@
     <code class='slug'>{{ slug }}</code>
 
     {% if include.page.layout == '2017/sheet' %}
-    <abbr class='attribute-peg -new-layout hint--bottom' data-hint='New layout!'><span></span></abbr>
+    <abbr class='attribute-peg -new-layout hint--bottom' data-hint='新样式'><span></span></abbr>
     {% endif %}
 
     <span class='title'>{{ include.page.title }} {{ include.page.redirect_to }}</span>

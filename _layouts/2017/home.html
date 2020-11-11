@@ -1,13 +1,26 @@
 <!doctype html>
-<html class='NoJs' lang='en'><head>
+<html class='NoJs' lang='cn'><head>
 
+<!-- 推荐速查表 -->
 {% assign featured_pages = site.pages
   | where_exp: "page", "page.tags contains 'Featured'"
 %}
+
+<!-- 最近修改的速查表 -->
 {% assign recent_pages = site.pages
   | where_exp: "page", "page.updated"
   | sort: "updated", "first"
 %}
+
+<!-- 分类信息 -->
+{% capture categorie_list %}
+{% for categorie in site.pages %}
+  {{categorie.category | strip }}
+  {% if forloop.last == false %}::{% endif%}
+{% endfor %}
+{% endcapture %}
+{% assign categories = categorie_list | split: '::' | sort | uniq %}
+
 {% include 2017/head.html critical='home' %}
 
 </head><body class='UseCompactHeader HighlightPubFirstLine'>
@@ -23,8 +36,10 @@
       {{ site.data.content.home.tagline }}
     </p>
 
+    <!-- 搜索框 -->
     {% include 2017/search-form.html live=true %}
 
+    <!-- 广告 -->
     {% if site.data.carbon.enabled %}
       <div class='pubbox'>
         {% include 2017/headline-pub.html %}
@@ -33,12 +48,13 @@
   </div>
 
   <div class='pages-list' role='main'>
+    <!-- 精选开发速查清单 -->
     {% for page in featured_pages %}
       {% include 2017/pages-list-item.html page=page class='item top-sheet' %}
     {% endfor %}
 
     <h2 class='category item' data-js-searchable-header>
-      <span>Recently updated</span>
+      <span>最近更新的开发速查表</span>
     </h2>
 
     {% for page in recent_pages reversed %}
@@ -48,13 +64,12 @@
     {% endfor %}
 
 
-    {% for category in site.data.categories.names %}
+    {% for category in categories %}
       <h2 class='category item' id='{{ category | downcase | replace: " ", "-" }}' data-js-searchable-header>
         <span>{{ category }}</span>
       </h2>
-
       {% for page in site.pages %}
-        {% if page.category == category %}
+        {% if category contains page.category %}
           {% if page.title %}
             {% include 2017/pages-list-item.html page=page class='article item' %}
           {% endif %}
@@ -63,9 +78,9 @@
     {% endfor %}
 
     <div class='message item missing-message'>
-      <h3>See something missing?</h3>
+      <h3>想要帮助我完善?</h3>
       <p>
-        <a class='push-button' href='{{ site.github.repository_url }}/issues/907'>Request cheatsheet</a>
+        <a class='push-button' href='{{ site.github.repository_url }}/issues/1'>前去完善</a>
       </p>
     </div>
   </div>

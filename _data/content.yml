@@ -1,44 +1,44 @@
 home:
-  title: "Rico's cheatsheets"
+  title: "SmallRaw 开发速查表"
   tagline: |
-    Hey! I'm <a href='https://ricostacruz.com'>@rstacruz</a> and this is a modest collection of cheatsheets I've written.
+    这是 SmallRaw 组织制作的一份开发速查表。
 
 top_nav:
-  title: Devhints.io
-  edit: Edit
-  edit_on_github: Edit this page on GitHub
+  title: hints.smallraw.com
+  edit: 编辑
+  edit_on_github: 去 GitHub 编辑
 
 sheet:
-  suffix: cheatsheet
+  suffix: 开发速查表
 
 social_list:
-  default_description: "Ridiculous collection of web development cheatsheets"
+  default_description: "收集开发速查表"
   description: "The ultimate cheatsheet for TITLE."
-  facebook_share: Share on Facebook
-  twitter_share: Share on Twitter
+  facebook_share: 分享到 Facebook
+  twitter_share: 分享到 Twitter
 
 related_posts_callout:
-  description: Over SIZE curated cheatsheets, by developers for developers.
-  link: Devhints home
+  description: 自用的开发速查表清单.
+  link: 回首页
 
 related_posts_group:
-  top: Top cheatsheets
-  other: Other cheatsheets
-  category: Other CATEGORY cheatsheets
+  top: 顶置的开发速查表
+  other: 其他开发速查表
+  category: 相同类型的开发速查表
 
 search_form:
-  default_placeholder: Search SIZE+ cheatsheets
-  home_placeholder: Search...
-  prefix: devhints.io
+  default_placeholder: 搜索开发速查表
+  home_placeholder: 搜索...
+  prefix: hints.smallraw.com
 
 comments_area:
-  suffix: for this cheatsheet.
-  link: "Write yours!"
+  suffix: 与讨论这个开发速查表.
+  link: “留下你的评价！”
 
 not_found:
-  title: Not found
-  description: Sorry, we don't have a cheatsheet for this yet. Try searching!
-  home: Back to home
+  title: 没有找到速查表
+  description: 抱歉，我们还没有开发速查表。请重新尝试搜索！
+  home: 返回主页
 
 announcement:
   id: 2017-10-26-twitter
