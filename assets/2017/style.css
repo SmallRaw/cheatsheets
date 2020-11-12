@@ -449,7 +449,7 @@ ul.-also-see.-also-see.-also-see > li > em { font-size: 11px; display: block; }
 .pages-list > .article:hover, .pages-list > .article:focus { color: #556677; }
 .pages-list > .article:hover > .info > .title, .pages-list > .article:focus > .info > .title { opacity: 1; color: #745fb5; }
 
-.pages-list > .category { font-size: 15px; border-bottom: solid 1px rgba(85, 102, 119, 0.3); margin: 16px 0; padding: 0 0 16px 0; font-weight: normal; color: #745fb5; }
+.pages-list > .category { font-size: 15px; border-bottom: solid 1px rgba(85, 102, 119, 0.3); margin: 16px 0; padding: 28px 0 16px 0; font-weight: normal; color: #745fb5; }
 @media (min-width: 480px) and (max-width: 768px) { .pages-list > .category { font-size: calc( 15px + 1 * ( ( 100vw - 480px) / 288 ) ); } }
 @media (min-width: 768px) and (max-width: 1280px) { .pages-list > .category { font-size: calc( 16px + 0 * ( ( 100vw - 768px) / 512 ) ); } }
 @media (min-width: 1280px) { .pages-list > .category { font-size: 16px; } }
