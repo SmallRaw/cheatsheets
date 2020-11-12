@@ -52,7 +52,7 @@ jobs:
 
       - name: Use Ruby
         uses: actions/setup-ruby@v1
-        with: { ruby-version: '2.7.1' }
+        with: { ruby-version: '2.7.2' }
 
       - name: Setup dependencies
         run: |
@@ -69,15 +69,3 @@ jobs:
           BRANCH: gh-pages
           FOLDER: _site
 
-      - name: "Deploy to mirror 🚀"
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          REPOSITORY_NAME: rstacruz/devhints-mirror
-          BRANCH: gh-pages
-          FOLDER: _site
-
-      - name: "Notify Slack 📢"
-        uses: rtCamp/action-slack-notify@v2.0.2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
