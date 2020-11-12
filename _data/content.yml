@@ -39,12 +39,3 @@ not_found:
   title: 没有找到速查表
   description: 抱歉，我们还没有开发速查表。请重新尝试搜索！
   home: 返回主页
-
-announcement:
-  id: 2017-10-26-twitter
-  title: |
-    New: We're on Twitter ♥️
-  body: |
-    Follow [@devhints](https://twitter.com/devhints) on Twitter for daily "today I learned" snippets!
-
-    [![](https://img.shields.io/twitter/follow/devhints.svg?style=social&label=@devhints)](https://twitter.com/devhints)

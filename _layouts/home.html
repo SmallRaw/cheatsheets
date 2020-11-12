@@ -5,12 +5,7 @@ type: home
 {% include head.html %}
 {% include site-header.html %}
 
-{% capture categorie_list %}
-{% for categorie in site.pages %}
-  {{categorie.category | strip }}
-  {% if forloop.last == false %}::{% endif%}
-{% endfor %}
-{% endcapture %}
+{% capture categorie_list %}{% for categorie in site.pages %}{{categorie.category|strip}}{% if forloop.last == false %}::{% endif%}{% endfor %}{% endcapture %}
 {% assign categories = categorie_list | split: '::' | sort | uniq %}
 
 
@@ -20,7 +15,7 @@ type: home
   </div>
   <div class='pages-list'>
     {% for page in site.pages %}
-      {% if category contains page.category %}
+      {% if category == page.category %}
         <a href="{{base}}{{ page.url }}">
           <span class='title'>{{ page.title }}</span>
           <span class='date'>{{ page.url | remove: '.html' | remove: '/' }}</span>

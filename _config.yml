@@ -32,7 +32,7 @@ exclude:
 # Markdown
 
 include:
-  -sheets
+  - sheets
 
 highlighter: false
 markdown: kramdown
@@ -53,13 +53,13 @@ defaults:
       layout: "default"
       og_type: article
       type: article
-      category: "Others"
+      category: "Hidden"
       excerpt_separator: "<!--more-->"
       prism_languages: []
 
 # Site info
 
-url: https://hints.smallRaw.com
+url: http://hints.smallRaw.com
 title: SmallRaw Cheatsheets
 
 # GitHub metadata

@@ -13,12 +13,7 @@
 %}
 
 <!-- 分类信息 -->
-{% capture categorie_list %}
-{% for categorie in site.pages %}
-  {{categorie.category | strip }}
-  {% if forloop.last == false %}::{% endif%}
-{% endfor %}
-{% endcapture %}
+{% capture categorie_list %}{% for categorie in site.pages %}{{categorie.category|strip}}{% if forloop.last == false %}::{% endif%}{% endfor %}{% endcapture %}
 {% assign categories = categorie_list | split: '::' | sort | uniq %}
 
 {% include 2017/head.html critical='home' %}
@@ -53,6 +48,7 @@
       {% include 2017/pages-list-item.html page=page class='item top-sheet' %}
     {% endfor %}
 
+    <!-- 最近更新的开发速查表 -->
     <h2 class='category item' data-js-searchable-header>
       <span>最近更新的开发速查表</span>
     </h2>
@@ -63,18 +59,22 @@
       {% endif %}
     {% endfor %}
 
-
+    <!-- 所有开发速查表 -->
     {% for category in categories %}
-      <h2 class='category item' id='{{ category | downcase | replace: " ", "-" }}' data-js-searchable-header>
-        <span>{{ category }}</span>
-      </h2>
-      {% for page in site.pages %}
-        {% if category contains page.category %}
-          {% if page.title %}
-            {% include 2017/pages-list-item.html page=page class='article item' %}
+      {% if category != 'Hidden' %}
+        <h2 class='category item' id='{{ category | downcase | replace: " ", "-" }}' data-js-searchable-header>
+          <span>{{ category }}</span>
+        </h2>
+        {% for page in site.pages %}
+          {% assign category_trim = category | strip %}
+          {% assign page_category_trim = page.category | strip %}
+          {% if category == page.category %}
+            {% if page.title %}
+              {% include 2017/pages-list-item.html page=page class='article item' %}
+            {% endif %}
           {% endif %}
-        {% endif %}
-      {% endfor %}
+        {% endfor %}
+      {% endif %}
     {% endfor %}
 
     <div class='message item missing-message'>
